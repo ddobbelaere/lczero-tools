@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lczero-tools"
+authors = [
+    {name = "Dieter Dobbelaere", email = "dieter.dobbelaere@gmail.com"},
+]
+description = "Leela Chess Zero tools"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "importlib-metadata; python_version<'3.8'",
+    "lczero-bindings @ git+https://github.com/ddobbelaere/lc0.git@python-bindings"
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/ddobbelaere/lczero-tools"
+"Bug Tracker" = "https://github.com/ddobbelaere/lczero-tools/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["lczero_tools.tests*"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.setuptools_scm]
